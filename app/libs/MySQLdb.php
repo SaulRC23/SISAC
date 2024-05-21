@@ -1,7 +1,4 @@
 <?php  
-/**
- * 
- */
 class MySQLdb
 {
     private $host;
@@ -22,10 +19,12 @@ class MySQLdb
             $this->conn = new PDO(
                 'mysql:host=' . $this->host . ';dbname=' . $this->db, 
                 $this->usuario, 
-                $this->clave
+                $this->clave,
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION) // Agregar para manejo de errores
             );
-            // echo "Conectado";
+            error_log("Conectado a la base de datos");  // Mensaje de depuración
         } catch (Exception $e) {
+            error_log("No se pudo conectar: " . $e->getMessage());
             die("No se pudo conectar: " . $e->getMessage());
         }
     }
