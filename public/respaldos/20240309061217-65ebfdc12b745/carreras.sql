@@ -1,0 +1,33 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+--
+-- Database: `escuela`
+--
+
+
+
+CREATE TABLE `carreras` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `clave` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `baja` int NOT NULL,
+  `baja_dt` datetime DEFAULT NULL,
+  `modificado_dt` datetime DEFAULT NULL,
+  `creado_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO carreras VALUES
+("1","1","s","1","2024-03-05 22:36:29","","2024-03-05 22:36:24"),
+("2","ISIC-2010-224","Ingenier&iacute;a En Sistemas Computacionales / 2017 / Escolarizado","0","","","2024-03-05 22:37:04");
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
